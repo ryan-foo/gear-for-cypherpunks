@@ -1412,15 +1412,15 @@ contract Gear is ERC721Enumerable, ReentrancyGuard, Ownable {
     function pluck(uint256 tokenId, string memory keyPrefix, string[] memory sourceArray) internal view returns (string memory) {
         uint256 rand = random(string(abi.encodePacked(keyPrefix, toString(tokenId))));
         string memory output = sourceArray[rand % sourceArray.length];
-        uint256 greatness = rand % 21;
-        if (greatness > 14) {
-            output = string(abi.encodePacked(output, " ", suffixes[rand % suffixes.length]));
+        uint256 greatness = rand % 51;
+        if (greatness > 40) {
+            output = string(abi.encodePacked(prefixes[rand % prefixes.length], " ", output));
         }
-        if (greatness >= 19) {
+        if (greatness >= 49) {
             string[2] memory name;
             name[0] = namePrefixes[rand % namePrefixes.length];
             name[1] = nameSuffixes[rand % nameSuffixes.length];
-            if (greatness == 19) {
+            if (greatness == 49) {
                 output = string(abi.encodePacked('"', name[0], ' ', name[1], '" ', output));
             } else {
                 output = string(abi.encodePacked('"', name[0], ' ', name[1], '" ', output, " +1"));
