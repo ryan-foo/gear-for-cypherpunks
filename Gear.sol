@@ -1381,32 +1381,32 @@ contract Gear is ERC721Enumerable, ReentrancyGuard, Ownable {
         return pluck(tokenId, "WEAPON", weapons);
     }
     
-    function getChest(uint256 tokenId) public view returns (string memory) {
-        return pluck(tokenId, "CHEST", chestArmor);
+    function getOuterChest(uint256 tokenId) public view returns (string memory) {
+        return pluck(tokenId, "OUTER", outerChestWear);
     }
     
-    function getHead(uint256 tokenId) public view returns (string memory) {
-        return pluck(tokenId, "HEAD", headArmor);
+    function getInnerChest(uint256 tokenId) public view returns (string memory) {
+        return pluck(tokenId, "INNER", innerChestWear);
     }
     
-    function getWaist(uint256 tokenId) public view returns (string memory) {
-        return pluck(tokenId, "WAIST", waistArmor);
+    function getHeadWear(uint256 tokenId) public view returns (string memory) {
+        return pluck(tokenId, "HEAD", headWear);
     }
 
-    function getFoot(uint256 tokenId) public view returns (string memory) {
-        return pluck(tokenId, "FOOT", footArmor);
+    function getlegWear(uint256 tokenId) public view returns (string memory) {
+        return pluck(tokenId, "LEG", legWear);
     }
     
-    function getHand(uint256 tokenId) public view returns (string memory) {
-        return pluck(tokenId, "HAND", handArmor);
+    function getFootWear(uint256 tokenId) public view returns (string memory) {
+        return pluck(tokenId, "FOOT", footWear);
     }
     
-    function getNeck(uint256 tokenId) public view returns (string memory) {
-        return pluck(tokenId, "NECK", necklaces);
+    function getEyeWear(uint256 tokenId) public view returns (string memory) {
+        return pluck(tokenId, "EYE", eyeWear);
     }
     
-    function getRing(uint256 tokenId) public view returns (string memory) {
-        return pluck(tokenId, "RING", rings);
+    function getCyberWare(uint256 tokenId) public view returns (string memory) {
+        return pluck(tokenId, "CYBER", cyberWare);
     }
     
     function pluck(uint256 tokenId, string memory keyPrefix, string[] memory sourceArray) internal view returns (string memory) {
